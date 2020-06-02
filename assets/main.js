@@ -57,9 +57,10 @@ $("#crop").click(function () {
                     statusContainer.addClass('alert-success').text("Success.");
                     closeAlert(statusContainer, 4000);
                 },
-                error: function () {
+                error: function (request, status, error) {
                     modalContainer.modal('hide');
                     statusContainer.addClass('alert-warning').text("Error.");
+                    console.log(error);
                     closeAlert(statusContainer, 4000);
                 },
                 complete: function (response) {
