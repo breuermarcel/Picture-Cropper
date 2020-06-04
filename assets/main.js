@@ -28,7 +28,9 @@ $("body").on("change", ".image", function (e) {
 
 modalContainer.on('shown.bs.modal', function () {
     cropper = new Cropper(image, {
-        aspectRatio: 1
+        aspectRatio: 1,
+        viewMode: 2,
+        autoCropArea: 0.4
     });
 }).on('hidden.bs.modal', function () {
     cropper.destroy();

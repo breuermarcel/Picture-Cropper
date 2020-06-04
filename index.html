@@ -3,6 +3,22 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"/>
+
+    <style type="text/css">
+        .cropper-container.cropper-bg {
+            max-height: 80vh;
+        }
+        .modal-body {
+            min-height: 80vh;
+        }
+        .cropped-image {
+            max-width: 250px;
+        }
+        #bg-upload-img {
+            //display: block;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -11,12 +27,12 @@
     <div id="current-status" class="alert" role="alert"></div>
 
     <div id="cropped-image-container" style="display: none">
-        <img title="cropped-image" src="" />
+        <img title="cropped-image" src="" class="cropped-image" />
     </div>
 
     <form method="post" data-toggle="tooltip" class="my-5">
         <label class="label" data-toggle="tooltip" title="Bild auswählen">
-            <img class="rounded" id="bg-upload-img" src="./assets/bg-upload.jpg" style="display: block; width: 100%;">
+            <img class="rounded" id="bg-upload-img" src="./assets/bg-upload.jpg">
             <input type="file" name="image" class="image" accept="image/*" style="display: none">
         </label>
     </form>
@@ -32,7 +48,7 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body" style="min-height: 80vh">
+            <div class="modal-body">
                 <div class="img-container">
                     <img id="image" src="https://avatars0.githubusercontent.com/u/3456749">
                 </div>
